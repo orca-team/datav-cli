@@ -1,0 +1,93 @@
+{
+  "dependencies": {
+    "@ali/datav-editor-gui": "1.1.0-alpha.4",
+    "@ali/deact": "^0.1.60",
+    "@ali/react-child-components-manager": "^0.0.30",
+    "antd": "^4.16.7",
+    "axios": "0.18.0",
+    "bcore": "0.0.18",
+    "brace": "0.9.1",
+    "classnames": "2.2.6",
+    "cube-es2015": "2.0.9",
+    "cube-less": "2.0.1",
+    "cube-react": "2.1.0",
+    "jquery": "2.1.4",
+    "lodash": "^4.17.21",
+    "prop-types": "15.6.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-select": "2.1.2",
+    "react-transition-group": "2.5.0",
+    "reflux": "6.4.1"
+  },
+  "cube": {
+    "moduleMap": {
+      "react": "./umd/react.production.min.js",
+      "react-dom": "./umd/react-dom.production.min.js"
+    },
+    "processors": {
+      ".less": "cube-less",
+      ".js": [
+        [
+          "cube-babel",
+          {
+            "presets": [
+              [
+                "react"
+              ],
+              [
+                "env",
+                {
+                  "targets": {
+                    "browsers": [
+                      "last 2 versions",
+                      "chrome >= 56"
+                    ]
+                  }
+                }
+              ]
+            ],
+            "plugins": [
+              "transform-class-properties",
+              "transform-es2015-spread",
+              "transform-object-rest-spread"
+            ]
+          }
+        ]
+      ],
+      ".jsx": [
+        [
+          "cube-babel",
+          {
+            "presets": [
+              [
+                "react"
+              ],
+              [
+                "env",
+                {
+                  "targets": {
+                    "browsers": [
+                      "last 2 versions",
+                      "chrome >= 56"
+                    ]
+                  }
+                }
+              ]
+            ],
+            "plugins": [
+              "transform-class-properties",
+              "transform-es2015-spread",
+              "transform-object-rest-spread"
+            ]
+          }
+        ]
+      ]
+    },
+    "build": {
+      "skip": [],
+      "ignore": [],
+      "reservedModule": []
+    }
+  }
+}

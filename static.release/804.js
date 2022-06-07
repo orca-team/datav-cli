@@ -1,0 +1,1 @@
+Cube("static:/804.js",[],function(a){var b={}.hasOwnProperty;return a.exports=function(a,c){return b.call(a,c)},a.exports});

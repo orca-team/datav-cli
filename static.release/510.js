@@ -1,0 +1,1 @@
+Cube("static:/510.js",["static:/504.js"],function(a,b,c){var d=c("static:/504.js"),e=d(Object.getPrototypeOf,Object);return a.exports=e,a.exports});

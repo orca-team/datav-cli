@@ -1,0 +1,1 @@
+Cube("static:/438.js",[],function(a){return a.exports=function(a,b){var c=-1,d=a.length;for(b||(b=Array(d));++c<d;)b[c]=a[c];return b},a.exports});

@@ -1,0 +1,1 @@
+Cube("static:/751.js",[],function(a){var b={}.toString;return a.exports=function(a){return b.call(a).slice(8,-1)},a.exports});

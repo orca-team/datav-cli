@@ -1,0 +1,1 @@
+Cube("static:/810.js",["static:/808.js","static:/802.js"],function(a,b,c){var d=c("static:/808.js"),e=c("static:/802.js").document,f=d(e)&&d(e.createElement);return a.exports=function(a){return f?e.createElement(a):{}},a.exports});

@@ -1,0 +1,1 @@
+Cube("static:/405.js",[],function(a){var b=Object.prototype;return a.exports=function(a){var c=a&&a.constructor,d="function"==typeof c&&c.prototype||b;return a===d},a.exports});

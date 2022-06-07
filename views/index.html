@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script>
+    window.$loadMonaco = (callback) => {
+      if (window.$loadMonaco.scriptLoaded) return typeof callback === 'function' && callback(require);
+      var script = document.createElement('script');
+      script.src = '/__static__/lib/monaco-editor/vs/loader.js';
+      // script.src = 'http://alinw.alicdn.com/alishu/monaco-editor/0.0.18/monaco-editor/min/vs/loader.js';
+      script.onload = () => {
+        window.$loadMonaco.scriptLoaded = true;
+        require.config({ paths: { 'vs': '/__static__/lib/monaco-editor/vs' } });
+        typeof callback === 'function' && callback(require);
+      }
+      document.body.appendChild(script);
+    }
+  </script>
+</head>
+<body>
+  <div id="screen"></div>
+  <script src="/__static__/cube.js"></script>
+  <script>
+    const server = '<%- server %>';
+    Cube.init({
+      base: '/',
+      debug: true,
+      enableCss: true,
+      remoteBase: {
+        'static': '/__static__',
+        'datav' : server,
+        'local': '/'
+      },
+      timeout: 10000,
+      version: 1,
+      global: {},
+    });
+    Cube.use('static:/js/share.js', function (Share) {
+      Share({
+        com: {
+          name: '<%- name %>',
+          datav: <%- datav %>,
+          version: '<%- version %>',
+          _dir: '<%- _dir %>',
+          children: <%- JSON.stringify(children) %>,
+        },
+        i18nMap: <%- i18n %>,
+        locale: '<%- locale %>',
+        region: '<%- region %>',
+        isReact: <%- isReact %>,
+        isRemoteLocal: '<%- isRemoteLocal %>',
+      });
+
+      Cube.use('static:/js/index.js', function (app) {
+        app({
+          screen: "screen",
+        });
+      })
+    });
+  </script>
+</body>
+
+</html>

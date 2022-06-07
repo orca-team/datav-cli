@@ -1,0 +1,1 @@
+Cube("static:/720.js",[],function(a,b){Object.defineProperty(b,"__esModule",{value:!0}),b.default=void 0;return b.default=function(a){if(!a)return!1;if(a.offsetParent)return!0;if(a.getBBox){var b=a.getBBox();if(b.width||b.height)return!0}if(a.getBoundingClientRect){var c=a.getBoundingClientRect();if(c.width||c.height)return!0}return!1},a.exports});

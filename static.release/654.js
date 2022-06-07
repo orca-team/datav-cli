@@ -1,0 +1,1 @@
+Cube("static:/654.js",["static:/808.js"],function(a,b,c){var d=c("static:/808.js");return a.exports=function(a){if(!d(a))throw TypeError(a+" is not an object!");return a},a.exports});

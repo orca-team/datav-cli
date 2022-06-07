@@ -1,0 +1,1 @@
+Cube("static:/772.js",[],function(a){function b(c,d){return a.exports=b=Object.setPrototypeOf||function(a,b){return a.__proto__=b,a},a.exports.__esModule=!0,a.exports["default"]=a.exports,b(c,d)}return a.exports=b,a.exports.__esModule=!0,a.exports["default"]=a.exports,a.exports});

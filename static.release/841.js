@@ -1,0 +1,1 @@
+Cube("static:/841.js",[],function(a){var b=Math.ceil,c=Math.floor;return a.exports=function(a){return isNaN(a=+a)?0:(0<a?c:b)(a)},a.exports});

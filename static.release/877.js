@@ -1,0 +1,4 @@
+Cube(880,[],function(a){var b=Date.now;return a.exports=function(a){var c=0,d=0;return function(){var e=b(),f=16-(e-d);if(d=e,!(0<f))c=0;else if(++c>=800)return arguments[0];return a.apply(void 0,arguments)}},a.exports});
+Cube(881,[],function(a){return a.exports=function(a){return function(){return a}},a.exports});
+Cube(879,["static:/497.js","static:/387.js"],function(a,b,c){var d=c(881),e=c("static:/497.js"),f=c("static:/387.js"),g=e?function(a,b){return e(a,"toString",{configurable:!0,enumerable:!1,value:d(b),writable:!0})}:f;return a.exports=g,a.exports});
+Cube("static:/877.js",[],function(a,b,c){var d=c(879),e=c(880),f=e(d);return a.exports=f,a.exports});

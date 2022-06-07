@@ -1,0 +1,1 @@
+Cube("static:/806.js",["static:/801.js","static:/809.js","static:/810.js"],function(a,b,c){return a.exports=!c("static:/801.js")&&!c("static:/809.js")(function(){return 7!=Object.defineProperty(c("static:/810.js")("div"),"a",{get:function(){return 7}}).a}),a.exports});

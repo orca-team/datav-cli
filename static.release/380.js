@@ -1,0 +1,1 @@
+Cube("static:/380.js",[],function(a,b){return Object.defineProperty(b,"__esModule",{value:!0}),a.exports});

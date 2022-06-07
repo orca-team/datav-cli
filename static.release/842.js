@@ -1,0 +1,1 @@
+Cube("static:/842.js",[],function(a){return a.exports=function(a){if(void 0==a)throw TypeError("Can't call method on  "+a);return a},a.exports});

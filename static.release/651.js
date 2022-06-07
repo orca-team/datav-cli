@@ -1,0 +1,1 @@
+Cube("static:/651.js",[],function(a){var b=a.exports={version:"2.6.12"};return"number"==typeof __e&&(__e=b),a.exports});

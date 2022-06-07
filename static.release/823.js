@@ -1,0 +1,1 @@
+Cube("static:/823.js",["static:/749.js","static:/804.js","static:/649.js"],function(a,b,c){var d=c("static:/749.js").f,e=c("static:/804.js"),f=c("static:/649.js")("toStringTag");return a.exports=function(a,b,c){a&&!e(a=c?a:a.prototype,f)&&d(a,f,{configurable:!0,value:b})},a.exports});

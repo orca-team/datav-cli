@@ -1,0 +1,1 @@
+Cube("static:/802.js",[],function(a,b,c,d,e,f){var f=a.exports="undefined"!=typeof window&&window.Math==Math?window:"undefined"!=typeof self&&self.Math==Math?self:Function("return this")();return"number"==typeof __g&&(__g=f),a.exports});

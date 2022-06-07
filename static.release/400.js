@@ -1,0 +1,1 @@
+Cube("static:/400.js",[],function(a){return a.exports=function(a){return"number"==typeof a&&-1<a&&0==a%1&&a<=9007199254740991},a.exports});
