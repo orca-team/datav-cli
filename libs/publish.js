@@ -19,7 +19,7 @@ module.exports = function (config, root, args) {
     args = root;
     root = process.cwd();
   } else {
-    root = path.join(process.cwd(), root);
+    root = path.isAbsolute(root) ? root : path.join(process.cwd(), root);
   }
 
   const {
