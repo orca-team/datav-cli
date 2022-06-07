@@ -4,6 +4,8 @@
 
 本包是基于 datav-cli 进行修改，移除了对 node 版本的限制
 
+为了和原来的工具区分，本工具的名称改为了 `datavv`
+
 ## 快速开始
 
 ### 一、环境准备
@@ -32,7 +34,7 @@ npm install --registry=https://registry.npm.taobao.org datav-cli -g
 安装成功时：
 
 ```bash
-datav --version
+datavv --version
 2.0.0
 ```
 
@@ -41,20 +43,20 @@ datav --version
 如果您的默认语言环境不是 English，您可以在命令行界面执行：
 
 ```bash
-datav locale
+datavv locale
 
 ? 您的语言环境是? [English\Chinese\Japanese]
 ```
 
-> 如果之后您想根据您的账户所在域，自动切换语言环境，您可以在登录后，执行：[datav locale-clear | datav lc]，可以清空默认设置的语言环境。
-> 如果之后您想切换语言环境，也可以再次使用 [datav locale] 重新设置语言环境。
+> 如果之后您想根据您的账户所在域，自动切换语言环境，您可以在登录后，执行：[datavv locale-clear | datavv lc]，可以清空默认设置的语言环境。
+> 如果之后您想切换语言环境，也可以再次使用 [datavv locale] 重新设置语言环境。
 
 ### 四、用户登录
 
 在您的命令行界面执行：
 
 ```bash
-datav login
+datavv login
 
 ? 用户名:  [输入您在 DataV 控制台首页右上角的名字，如果是子账号，请注意使用主账号的名字]
 ? 开发者识别码:  [输入您在 DataV 控制台「我的组件」页复制得到的开发者识别码]
@@ -73,7 +75,7 @@ datav login
 在您的命令行界面执行：
 
 ```bash
-datav init
+datavv init
 
 ? 你要创建的组件名(字母，-，数字)是... [组件名只能出现字母、数字和-]
 ? 你要创建的组件显示名是... [显示名是以后在大屏中组件列表里显示的您的组件名]
@@ -91,7 +93,7 @@ datav init
 
 ```bash
 cd 您的组件名
-datav run
+datavv run
 ```
 
 当看到 `服务启动`时，预览组件的服务已经启动了，您的 google chrome 浏览器会被自动打开组件预览页。如图：
@@ -99,7 +101,7 @@ datav run
 ![](https://img.alicdn.com/tfs/TB1KIaQukzoK1RjSZFlXXai4VXa-2048-600.png)
 
 > 1. 如果您的浏览器没有自动打开，可能是您未安装 google chrome，建议安装后手动打开 localhost:1111/
-> 2. 如果您看到端口冲突，可能是您的 1111 端口被别的应用程序占用了，您可以使用 `datav run -p 1112` 来指定使用 1112 端口开启我们的预览服务。
+> 2. 如果您看到端口冲突，可能是您的 1111 端口被别的应用程序占用了，您可以使用 `datavv run -p 1112` 来指定使用 1112 端口开启我们的预览服务。
 > 3. 如果您的浏览器打开 localhost:1111/，显示并没有此服务，可能是您的电脑并未配置 hosts localhost 指向 127.0.0.1。你可以访问 127.0.0.1:1111/
 
 成功后的预览页如图：
@@ -144,10 +146,10 @@ datav run
 您可通过以下三种方式发布组件。
 
 - 方式一（推荐）
-  进入组件的目录地址下，执行 datav publish 命令，组件将自动打包压缩发布至账号所在域的服务器。
+  进入组件的目录地址下，执行 datavv publish 命令，组件将自动打包压缩发布至账号所在域的服务器。
 
 - 方式二
-  进入组件的目录地址下，执行 datav package 命令，在组件目录外会有一个以“组件-版本号”命名的 tar.gz 压缩包，将此压缩包上传到 datav.aliyun.com 的组件页，即可发布。
+  进入组件的目录地址下，执行 datavv package 命令，在组件目录外会有一个以“组件-版本号”命名的 tar.gz 压缩包，将此压缩包上传到 datav.aliyun.com 的组件页，即可发布。
 
 - 方法三
   进入预览组件页面下的发布页面，单击发射，即可发布组件。
@@ -659,7 +661,7 @@ config 配置要求:
 
 ```bash
 
-datav package
+datavv package
 
 ```
 

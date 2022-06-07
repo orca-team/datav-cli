@@ -1,5 +1,5 @@
 {
-  "name": "@ali-whale/datav-cli",
+  "name": "@orca-fe/datav-cli",
   "version": "2.8.2",
   "description": "DataV component's cli",
   "bin": {
@@ -16,7 +16,8 @@
     "publisher"
   ],
   "publishConfig": {
-    "registry": "https://registry-cnpm.dayu.work/"
+    "registry": "https://registry-cnpm.dayu.work/",
+    "access": "public"
   },
   "author": "elvira.zy",
   "license": "ISC",
