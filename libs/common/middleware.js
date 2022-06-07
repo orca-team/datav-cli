@@ -133,7 +133,6 @@ exports.cubeUser = function (source, options) {
   const originResolveModulePath = cube.resolveModulePath;
 
   cube.resolveModulePath = function (data, file, callback) {
-    console.log('resolve----', data, file);
     let deal = false;
     var _path;
     if (/^\w+?:/.test(file)) {
