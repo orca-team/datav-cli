@@ -6,6 +6,8 @@
 
 为了和原来的工具区分，本工具的名称改为了 `datavv`
 
+> `init` 和 `run` 命令目前测试没有问题，其他命令待验证。
+
 ## 快速开始
 
 ### 一、环境准备
@@ -28,7 +30,7 @@ npm -v
 在您的命令行界面执行：
 
 ```bash
-npm install --registry=https://registry.npm.taobao.org datav-cli -g
+npm install --registry=https://registry.npm.taobao.org @orca-fe/datav-cli -g
 ```
 
 安装成功时：
