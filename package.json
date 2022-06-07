@@ -16,10 +16,10 @@
     "publisher"
   ],
   "publishConfig": {
-    "registry": "https://registry-cnpm.dayu.work/",
+    "registry": "https://registry.npmjs.org/",
     "access": "public"
   },
-  "author": "elvira.zy",
+  "author": "nicokam",
   "license": "ISC",
   "dependencies": {
     "@babel/core": "^7.18.2",
