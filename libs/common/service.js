@@ -6,6 +6,9 @@ var partials = require('express-partials');
 var ejs = require('ejs');
 var cors = require('cors');
 var app = ex();
+var expressWs = require('express-ws')(app);
+var chokidar = require('chokidar');
+var lodash = require('lodash');
 
 var mw = require('./middleware');
 var multer = require('multer');
@@ -50,11 +53,42 @@ module.exports = (option) => {
     app.use(router);
 
     app.use('/__static__', mw.cubeAdmin(option.root, option));
+    var wsList = [];
+    app.ws('/__socket__', function(ws, req) {
+      wsList.push(ws);
+      ws.on('message', function(msg) {
+        console.log(msg);
+      });
+      ws.on('close', function(msg) {
+        wsList = wsList.filter((_ws) => _ws !== ws);
+      });
+      console.log('socket', req.testing);
+    });
     app.use('/', mw.cubeUser(source, option));
 
     app.use(function (req, res) {
       res.status(404).end('Not Found');
     });
+
+    var reload = lodash.debounce(
+      () => {
+        wsList.forEach((ws) => {
+          ws.send('reload');
+        });
+      },
+      { wait: 300 },
+    );
+
+    // watchFiles
+    var watcher = chokidar.watch('**/*.{js,jsx,css,less}', {
+      ignored: /node_modules/,
+      cwd: source,
+    });
+
+    watcher
+      .on('add', (path) => reload.run())
+      .on('change', (path) => reload.run())
+      .on('unlink', (path) => reload.run());
 
     app.listen(port, function (err) {
       if (err) {

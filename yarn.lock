@@ -2880,7 +2880,7 @@ chokidar@^2.1.8:
   optionalDependencies:
     fsevents "^1.2.7"
 
-chokidar@^3.4.1:
+chokidar@^3.4.1, chokidar@^3.5.3:
   version "3.5.3"
   resolved "https://registry.npmmirror.com/chokidar/-/chokidar-3.5.3.tgz#1cf37c8707b932bd1af1ae22c0432e2acd1903bd"
   integrity sha512-Dr3sfKRP6oTcjf2JmUmFJfeVMvXBdegxB0iVQ5eb2V10uFJUCAS8OByZdVAyVb8xXNz3GjjTgj9kLWsZTqE6kw==
@@ -4208,6 +4208,13 @@ express-partials@0.3.0:
   resolved "https://registry.npmmirror.com/express-partials/-/express-partials-0.3.0.tgz#88b9c40164afd9a55278629b2948e6ace7bff45f"
   integrity sha512-LodvQHqUhSKJNl7NMjjPvHAh7sybtmUOWKKGrrb2/eL/kPlto2KQO5lCVceOBamxipDoWw07zLwWiDwidHgmEQ==
 
+express-ws@^5.0.2:
+  version "5.0.2"
+  resolved "https://registry.npmmirror.com/express-ws/-/express-ws-5.0.2.tgz#5b02d41b937d05199c6c266d7cc931c823bda8eb"
+  integrity sha512-0uvmuk61O9HXgLhGl3QhNSEtRsQevtmbL94/eILaliEADZBHZOQUAiHFrGPrgsjikohyrmSG5g+sCfASTt0lkQ==
+  dependencies:
+    ws "^7.4.6"
+
 express@^4.17.1, express@^4.18.1:
   version "4.18.1"
   resolved "https://registry.npmmirror.com/express/-/express-4.18.1.tgz#7797de8b9c72c857b9cd0e14a5eea80666267caf"
@@ -4578,16 +4585,6 @@ from2@^2.1.0, from2@^2.3.0:
   dependencies:
     inherits "^2.0.1"
     readable-stream "^2.0.0"
-
-fs-extra2@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.npmmirror.com/fs-extra2/-/fs-extra2-1.0.0.tgz#8266e3ed6da2e353c9696d0a45c6a684b79b095e"
-  integrity sha512-2Ea7HT7mjVz5/EECOID9wC499Tx0z//F23Rr4NZzkBrKORSXaCyFkPw946ZcAYgu+qDTY/cJcMxL1YJrOr0/Ag==
-  dependencies:
-    graceful-fs "^4.1.2"
-    jsonfile "^2.1.0"
-    path-is-absolute "^1.0.0"
-    rimraf "^2.2.8"
 
 fs-extra@^8.1.0:
   version "8.1.0"
@@ -5908,13 +5905,6 @@ json5@^2.1.2, json5@^2.2.1:
   version "2.2.1"
   resolved "https://registry.npmmirror.com/json5/-/json5-2.2.1.tgz#655d50ed1e6f95ad1a3caababd2b0efda10b395c"
   integrity sha512-1hqLFMSrGHRHxav9q9gNjJ5EXznIxGVO09xQRrwplcS8qs28pZ8s8hupZAmqDwZUmVZ2Qb2jnyPOWcDH8m8dlA==
-
-jsonfile@^2.1.0:
-  version "2.4.0"
-  resolved "https://registry.npmmirror.com/jsonfile/-/jsonfile-2.4.0.tgz#3736a2b428b87bbda0cc83b53fa3d633a35c2ae8"
-  integrity sha512-PKllAqbgLgxHaj8TElYymKCAgrASebJrWpTnEkOaTowt23VKXXN0sUeriJ+eh7y6ufb/CC5ap11pz71/cM0hUw==
-  optionalDependencies:
-    graceful-fs "^4.1.6"
 
 jsonfile@^4.0.0:
   version "4.0.0"
@@ -7743,7 +7733,7 @@ retry@^0.12.0:
   resolved "https://registry.npmmirror.com/retry/-/retry-0.12.0.tgz#1b42a6266a21f07421d1b0b54b7dc167b01c013b"
   integrity sha512-9LkiTwjUh6rT555DtE9rTX+BKByPfrMzEAtnlEtdEwr3Nkffwiihqe2bWADg+OQRjt9gl6ICdmB/ZFDCGAtSow==
 
-rimraf@2, rimraf@^2.2.8, rimraf@^2.5.1, rimraf@^2.5.4, rimraf@^2.6.3:
+rimraf@2, rimraf@^2.5.1, rimraf@^2.5.4, rimraf@^2.6.3:
   version "2.7.1"
   resolved "https://registry.npmmirror.com/rimraf/-/rimraf-2.7.1.tgz#35797f13a7fdadc566142c29d4f07ccad483e3ec"
   integrity sha512-uWjbaKIK3T1OSVptzX7Nl6PvQ3qAGtKEtVRjRuazjfL3Bx5eI409VZSqgND+4UNnmzLVdPj9FqFJNPqBZFve4w==
@@ -9360,6 +9350,11 @@ ws@^6.2.1:
   integrity sha512-zmhltoSR8u1cnDsD43TX59mzoMZsLKqUweyYBAIvTngR3shc0W6aOZylZmq/7hqyVxPdi+5Ud2QInblgyE72fw==
   dependencies:
     async-limiter "~1.0.0"
+
+ws@^7.4.6:
+  version "7.5.9"
+  resolved "https://registry.npmmirror.com/ws/-/ws-7.5.9.tgz#54fa7db29f4c7cec68b1ddd3a89de099942bb591"
+  integrity sha512-F+P9Jil7UiSKSkppIiD94dN07AwvFixvLIj1Og1Rl9GGMuNipJnV9JzjD6XuqmAeiswGvUmNLjr5cFuXwNS77Q==
 
 xfs@^0.2.6, xfs@~0.2.2:
   version "0.2.6"
