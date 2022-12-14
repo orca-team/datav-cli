@@ -1,6 +1,6 @@
 {
   "name": "@orca-fe/datav-cli",
-  "version": "2.9.2",
+  "version": "2.9.3",
   "description": "DataV component's cli",
   "bin": {
     "datavv": "bin/datav.js"
