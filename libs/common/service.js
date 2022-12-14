@@ -92,7 +92,7 @@ module.exports = (option) => {
         }
 
         // watchFiles
-        var watcher = chokidar.watch('**/*.{js,jsx,css,less}', {
+        var watcher = chokidar.watch('**/*.{js,json,jsx,css,less}', {
           ignored: /(node_modules|.cubecache)/,
           cwd: source,
         });
