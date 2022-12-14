@@ -20,7 +20,7 @@ var open = require('open');
 var i18n = require('../i18n_json');
 
 /**
- * @param {object} option 
+ * @param {object} option
  * option 包含：
  * 1. config/index.js 中的环境配置
  * 2. datav run 命令追加的配置：slient、local、port 等
@@ -44,22 +44,26 @@ module.exports = (option) => {
     app.use(bodyParser.json({ strict: true }));
     app.use(bodyParser.urlencoded({ extended: true }));
 
-    app.use(multer({limits: {
-      fileSize: 3*1024*1024,
-      files: 1
-    }}).single('file'));
+    app.use(
+      multer({
+        limits: {
+          fileSize: 3 * 1024 * 1024,
+          files: 1,
+        },
+      }).single('file'),
+    );
 
     var router = require('./router')(ex.Router(), source, option);
     app.use(router);
 
     app.use('/__static__', mw.cubeAdmin(option.root, option));
     var wsList = [];
-    app.ws('/__socket__', function(ws, req) {
+    app.ws('/__socket__', function (ws, req) {
       wsList.push(ws);
-      ws.on('message', function(msg) {
+      ws.on('message', function (msg) {
         console.log(msg);
       });
-      ws.on('close', function(msg) {
+      ws.on('close', function (msg) {
         wsList = wsList.filter((_ws) => _ws !== ws);
       });
       console.log('socket', req.testing);
@@ -79,31 +83,33 @@ module.exports = (option) => {
       { wait: 300 },
     );
 
-    // watchFiles
-    var watcher = chokidar.watch('**/*.{js,jsx,css,less}', {
-      ignored: /node_modules/,
-      cwd: source,
-    });
+    app
+      .listen(port, function (err) {
+        if (err) {
+          log.err(err);
+          return;
+        }
 
-    watcher
-      .on('add', (path) => reload.run())
-      .on('change', (path) => reload.run())
-      .on('unlink', (path) => reload.run());
+        // watchFiles
+        var watcher = chokidar.watch('**/*.{js,jsx,css,less}', {
+          ignored: /node_modules/,
+          cwd: source,
+        });
 
-    app.listen(port, function (err) {
-      if (err) {
-        log.err(err)
-        return
-      }
-    }).on('error', function(err) { 
-      log.info(`${i18n.get('preview.servicePortConflict')} http://localhost:${port}/${option.page || ''}`)
-    });
+        watcher
+          .on('add', (path) => reload())
+          .on('change', (path) => reload())
+          .on('unlink', (path) => reload());
+      })
+      .on('error', function (err) {
+        log.info(`${i18n.get('preview.servicePortConflict')} http://localhost:${port}/${option.page || ''}`);
+      });
 
     if (!option.silent) {
       open(`http://localhost:${port}/${option.page || ''}`);
-      log.info(i18n.get('preview.serviceStart', {port: `${port}/${option.page || ''}`}));
+      log.info(i18n.get('preview.serviceStart', { port: `${port}/${option.page || ''}` }));
     }
   } catch (e) {
     log.err(e.stack || e);
   }
-}
+};
