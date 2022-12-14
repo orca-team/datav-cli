@@ -66,7 +66,7 @@ module.exports = (option) => {
       ws.on('close', function (msg) {
         wsList = wsList.filter((_ws) => _ws !== ws);
       });
-      console.log('socket', req.testing);
+      // console.log('socket', req.testing);
     });
     app.use('/', mw.cubeUser(source, option));
 
@@ -76,6 +76,7 @@ module.exports = (option) => {
 
     var reload = lodash.debounce(
       () => {
+        console.log('Hot Reload');
         wsList.forEach((ws) => {
           ws.send('reload');
         });
@@ -92,7 +93,7 @@ module.exports = (option) => {
 
         // watchFiles
         var watcher = chokidar.watch('**/*.{js,jsx,css,less}', {
-          ignored: /node_modules/,
+          ignored: /(node_modules|.cubecache)/,
           cwd: source,
         });
 
