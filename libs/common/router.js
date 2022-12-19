@@ -35,8 +35,10 @@ function end(code, str, data) {
 }
 
 module.exports = function (router, source, options) {
-  const configUrl = path.join(source, '/package.json');
+  const configUrl = options.pkgjsonSavePath || path.join(source, '/package.json');
   const { local } = options;
+
+  console.log(configUrl)
 
   router.get('/', (req, res) => {
     res.redirect('/index.html');

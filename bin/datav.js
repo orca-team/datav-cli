@@ -77,6 +77,7 @@ cmd.command('init')
 cmd
   .command('start')
   .alias('run')
+  .option('--pkgjson-save-path [path]', 'custom package.json save path')
   .option('-p --port [value]', 'custom server port')
   .option('-s --silent', 'keep silent')
   .option('-l --local', 'use local remote')
